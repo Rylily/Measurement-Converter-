@@ -1,0 +1,37 @@
+class Convert:
+  @staticmethod
+  def convert(length):
+    if "cm" in length:
+      mylist=list(length)
+      for i in range(2):
+        mylist.pop()
+      length="".join(mylist)
+      length=float(length)
+      newlength=0.3937*length
+      newlength=round(newlength,1)
+      newlength=str(newlength)
+      newlength=newlength+"inch"
+      print(newlength)
+    elif "inch" in length:
+      mylist=list(length)
+      for i in range(4):
+        mylist.pop()
+      length="".join(mylist)
+      length=float(length)
+      newlength=2.54*length
+      newlength=round(newlength,1)
+      newlength=str(newlength)
+      newlength=newlength+"cm"
+      print(newlength)
+  @staticmethod
+  def main():
+    while True:
+      length=input("Input length: ")
+      if length=="end":
+        break
+      else:
+        Convert.convert(length)
+Convert.main()
+  
+      
+    
